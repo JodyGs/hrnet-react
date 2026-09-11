@@ -1,3 +1,4 @@
+import { Suspense } from 'react'
 import { NavLink, Outlet } from 'react-router'
 import styles from './Layout.module.css'
 
@@ -34,7 +35,9 @@ export function Layout() {
       </header>
 
       <main className={styles.main}>
-        <Outlet />
+        <Suspense fallback={<p className={styles.loading}>Loading…</p>}>
+          <Outlet />
+        </Suspense>
       </main>
 
       <footer className={styles.footer}>WealthHealth · HRnet</footer>
