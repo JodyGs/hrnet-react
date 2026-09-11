@@ -1,0 +1,166 @@
+.datePicker {
+  position: relative;
+}
+
+/* Text field + calendar button */
+.field {
+  display: flex;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+}
+
+.field:hover {
+  border-color: var(--color-accent);
+}
+
+.field:focus-within {
+  border-color: var(--color-primary);
+}
+
+.invalid,
+.invalid:hover {
+  border-color: var(--color-danger);
+}
+
+.input {
+  flex: 1;
+  min-width: 0;
+  min-height: 2.75rem;
+  padding: 0.5rem 0.75rem;
+  border: 0;
+  border-radius: var(--radius) 0 0 var(--radius);
+  background: transparent;
+}
+
+.toggle {
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  border: 0;
+  border-left: 1px solid var(--color-border);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  background: transparent;
+  color: var(--color-primary);
+  cursor: pointer;
+}
+
+.toggle:hover {
+  background: var(--color-accent-soft);
+}
+
+/* Calendar popover */
+.popover {
+  position: absolute;
+  z-index: 20;
+  top: calc(100% + 4px);
+  left: 0;
+  width: 19rem;
+  max-width: calc(100vw - 2rem);
+  padding: 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  box-shadow: var(--shadow);
+}
+
+.calendarHeader {
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.navButton {
+  width: 2rem;
+  height: 2rem;
+  flex-shrink: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--color-primary);
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.navButton:hover:not(:disabled) {
+  background: var(--color-accent-soft);
+}
+
+.navButton:disabled {
+  color: var(--color-border);
+  cursor: default;
+}
+
+.navSelect {
+  flex: 1;
+  min-width: 0;
+  padding: 0.3rem 0.25rem;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  background: var(--color-surface);
+}
+
+.grid {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.grid th {
+  padding-bottom: 0.25rem;
+  color: var(--color-muted);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.grid td {
+  padding: 1px;
+}
+
+.day {
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+}
+
+.day:hover {
+  background: var(--color-accent-soft);
+}
+
+.outsideMonth {
+  color: var(--color-muted);
+  opacity: 0.6;
+}
+
+.today {
+  border-color: var(--color-accent);
+  font-weight: 600;
+}
+
+.selected,
+.selected:hover {
+  background: var(--color-primary);
+  color: #fff;
+  opacity: 1;
+}
+
+.todayButton {
+  display: block;
+  margin: 0.5rem auto 0;
+  padding: 0.3rem 0.9rem;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--color-primary);
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+.todayButton:hover {
+  background: var(--color-accent-soft);
+}
