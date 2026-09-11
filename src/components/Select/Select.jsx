@@ -19,6 +19,7 @@ const clamp = (value, min, max) => Math.min(Math.max(value, min), max)
  * @param {object} props
  * @param {string} props.id - id of the button, to link it with a `<label htmlFor>`
  * @param {string} [props.labelId] - id of the visible label, used to name the list of options
+ * @param {string} [props.ariaLabelledBy] - ids of the elements naming the field, when there is no `<label>`
  * @param {{ value: string, label: string }[]} props.options - available options
  * @param {string} props.value - value of the selected option ('' when none)
  * @param {(value: string) => void} props.onChange - called with the value of the chosen option
@@ -29,6 +30,7 @@ const clamp = (value, min, max) => Math.min(Math.max(value, min), max)
 export function Select({
   id,
   labelId,
+  ariaLabelledBy,
   options,
   value,
   onChange,
@@ -123,6 +125,7 @@ export function Select({
         id={id}
         role="combobox"
         aria-haspopup="listbox"
+        aria-labelledby={ariaLabelledBy}
         aria-expanded={isOpen}
         aria-controls={isOpen ? listboxId : undefined}
         aria-activedescendant={isOpen && activeIndex >= 0 ? optionId(activeIndex) : undefined}
@@ -144,7 +147,7 @@ export function Select({
           ref={listRef}
           id={listboxId}
           role="listbox"
-          aria-labelledby={labelId}
+          aria-labelledby={labelId ?? ariaLabelledBy}
           tabIndex={-1}
           className={styles.listbox}
           // Keep the focus on the button while clicking an option.
