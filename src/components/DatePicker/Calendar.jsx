@@ -98,7 +98,7 @@ export function Calendar({ value, onSelect, minYear, maxYear, autoFocus = false 
         </button>
         <select
           aria-label="Month"
-          className={styles.navSelect}
+          className={`${styles.navSelect} ${styles.monthSelect}`}
           value={month}
           onChange={(event) => moveTo(addMonths(focusedDate, Number(event.target.value) - month), { focusDay: false })}
         >
