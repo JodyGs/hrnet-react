@@ -1,0 +1,26 @@
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  margin: 0;
+  font-size: 1.75rem;
+}
+
+.addLink {
+  padding: 0.6rem 1.1rem;
+  border-radius: var(--radius);
+  background: var(--color-primary);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.addLink:hover {
+  background: var(--color-primary-hover);
+}
